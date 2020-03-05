@@ -269,3 +269,83 @@ void __fastcall TForm1::SpeedButton4Click(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+void __fastcall TForm1::Button6Click(TObject *Sender)
+{
+	int a=0;
+	Label19->Caption=static_cast<char>( a );
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Edit1Change(TObject *Sender)
+{
+//UnicodeString x = Edit1->Text;
+//
+//// first convert to AnsiString instead of Unicode.
+//AnsiString ansiX(x);
+//
+//// allocate enough memory for your char array (and the null terminator)
+//char* str = new char[ansiX.Length()+1];
+//
+//// copy the contents of the AnsiString into your char array
+//strcpy(str, ansiX.c_str());
+//
+//// the rest of your code goes here
+//Label19->Caption=str;
+//
+//// remember to delete your char array when done
+//delete[] str;
+//
+//char* a = str;
+//char A[100];
+//strcpy(a,A);
+//Label18->Caption=A;
+//
+//int ia = (int)a;
+//
+////ia = Edit1->Text;
+//char hexString[20];
+//itoa(ia, hexString, 16);
+////Label18->Caption = hexString;
+
+
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm1::Button5Click(TObject *Sender)
+{
+
+UnicodeString x = Edit1->Text;
+
+// first convert to AnsiString instead of Unicode.
+AnsiString ansiX(x);
+
+// allocate enough memory for your char array (and the null terminator)
+char* str = new char[ansiX.Length()+1];
+
+// copy the contents of the AnsiString into your char array
+strcpy(str, ansiX.c_str());
+
+// the rest of your code goes here
+Label19->Caption=str;
+
+// remember to delete your char array when done
+delete[] str;
+
+char* a = str;
+char A[100];
+strcpy(a,A);
+Label18->Caption=a;
+
+int ia = (int)a;
+
+//ia = Edit1->Text;
+char hexString[20];
+itoa(ia, hexString, 16);
+//Label18->Caption = hexString;
+
+}
+//---------------------------------------------------------------------------
+

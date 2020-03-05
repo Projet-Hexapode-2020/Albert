@@ -35,8 +35,6 @@ using namespace std;
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
-
-
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button1Click(TObject *Sender)
@@ -218,6 +216,7 @@ void __fastcall TForm1::SpeedButton3Click(TObject *Sender)
 void __fastcall TForm1::SpeedButton2Click(TObject *Sender)
 {
 	// --------------Gauche-------------
+
 		BYTE buffer[] = { 0x67, 0x61, 0x75, 0x63, 0x68, 0x65, 0x31, 0x30  };
 		hCom = CreateFile(
 		device,
@@ -269,4 +268,89 @@ void __fastcall TForm1::SpeedButton4Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TForm1::Button6Click(TObject *Sender)
+{
+	int a=0;
+	Label19->Caption=static_cast<char>( a );
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Edit1Change(TObject *Sender)
+{
+//UnicodeString x = Edit1->Text;
+//
+//// first convert to AnsiString instead of Unicode.
+//AnsiString ansiX(x);
+//
+//// allocate enough memory for your char array (and the null terminator)
+//char* str = new char[ansiX.Length()+1];
+//
+//// copy the contents of the AnsiString into your char array
+//strcpy(str, ansiX.c_str());
+//
+//// the rest of your code goes here
+//Label19->Caption=str;
+//
+//// remember to delete your char array when done
+//delete[] str;
+//
+//char* a = str;
+//char A[100];
+//strcpy(a,A);
+//Label18->Caption=A;
+//
+//int ia = (int)a;
+//
+////ia = Edit1->Text;
+//char hexString[20];
+//itoa(ia, hexString, 16);
+////Label18->Caption = hexString;
+
+
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm1::Button5Click(TObject *Sender)
+{
+
+UnicodeString x = Edit1->Text;
+
+// first convert to AnsiString instead of Unicode.
+AnsiString ansiX(x);
+
+// allocate enough memory for your char array (and the null terminator)
+char* str = new char[ansiX.Length()+1];
+
+// copy the contents of the AnsiString into your char array
+strcpy(str, ansiX.c_str());
+
+// the rest of your code goes here
+Label19->Caption=str;
+
+// remember to delete your char array when done
+delete[] str;
+
+////strcpy(a,A);
+//Label18->Caption=A;
+
+//char c[100];
+//   scanf("%s",c);
+//   char c2[100]=c;
+
+char A2[2];
+scanf(A2,str);
+Label18->Caption = A2;
+
+//A=str;
+//int ia = (int)a;
+//char hexString[20];
+//itoa(ia, hexString, 16);
+
+
+}
+//---------------------------------------------------------------------------
 

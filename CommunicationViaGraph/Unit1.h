@@ -58,6 +58,7 @@ __published:	// Composants gérés par l'EDI
 	void __fastcall SpeedButton4Click(TObject *Sender);
 	void __fastcall Button6Click(TObject *Sender);
 	void __fastcall Edit1Change(TObject *Sender);
+	void __fastcall Button5Click(TObject *Sender);
 private:	// Déclarations utilisateur
 public:		// Déclarations utilisateur
 	__fastcall TForm1(TComponent* Owner);

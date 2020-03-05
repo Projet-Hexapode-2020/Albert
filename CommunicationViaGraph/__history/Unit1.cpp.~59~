@@ -73,28 +73,7 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 
 		//-----------Vitesse--------------
 
-	UnicodeString x = Edit1->Text;
-	AnsiString ansiX(x);
-	char* str = new char[ansiX.Length()+1];
-	strcpy(str, ansiX.c_str());
-	Label19->Caption=str;
-	delete[] str;
-
-	char z= *str;
-
-//	char A2[20];
-//	scanf(A2,str);
-
-	int ia = (int)z;
-	char hexString[20];
-	itoa(ia, hexString, 16);
-	Label18->Caption = hexString;
-
-	char d;
-	strcpy(d,hexString);
-
-
-		BYTE buffer[] = { 0x76, 0x69, 0x74, 0x65, 0x73, 0x73, 0x65, "0x"+hexString };
+		BYTE buffer[] = { 0x76, 0x69, 0x74, 0x65, 0x73, 0x73, 0x65, 0x32, 0x30  };
 		hCom = CreateFile(
 		device,
 		GENERIC_READ | GENERIC_WRITE,
@@ -338,22 +317,39 @@ void __fastcall TForm1::Edit1Change(TObject *Sender)
 void __fastcall TForm1::Button5Click(TObject *Sender)
 {
 
-//	UnicodeString x = Edit1->Text;
-//	AnsiString ansiX(x);
-//	char* str = new char[ansiX.Length()+1];
-//	strcpy(str, ansiX.c_str());
-//	Label19->Caption=str;
-//	delete[] str;
-//
-//	char z= *str;
-//
-////	char A2[20];
-////	scanf(A2,str);
-//
-//	int ia = (int)z;
-//	char hexString[20];
-//	itoa(ia, hexString, 16);
-//	Label18->Caption = hexString;
+UnicodeString x = Edit1->Text;
+
+// first convert to AnsiString instead of Unicode.
+AnsiString ansiX(x);
+
+// allocate enough memory for your char array (and the null terminator)
+char* str = new char[ansiX.Length()+1];
+
+// copy the contents of the AnsiString into your char array
+strcpy(str, ansiX.c_str());
+
+// the rest of your code goes here
+Label19->Caption=str;
+
+// remember to delete your char array when done
+delete[] str;
+
+////strcpy(a,A);
+//Label18->Caption=A;
+
+//char c[100];
+//   scanf("%s",c);
+//   char c2[100]=c;
+
+char A2[100];
+scanf(A2,str);
+Label18->Caption = str;
+char u=A2;
+
+//A=str;
+//int ia = (int)a;
+//char hexString[20];
+//itoa(ia, hexString, 16);
 
 
 }
