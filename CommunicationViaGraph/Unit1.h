@@ -9,6 +9,7 @@
 #include <Vcl.Forms.hpp>
 #include <Vcl.Menus.hpp>
 #include <Vcl.Buttons.hpp>
+#include "Unit3.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -25,28 +26,17 @@ __published:	// Composants gérés par l'EDI
 	TLabel *Label4;
 	TLabel *Label5;
 	TLabel *Label6;
-	TButton *Button4;
-	TButton *Button5;
-	TLabel *Label7;
-	TLabel *Label8;
-	TLabel *Label9;
-	TLabel *Label10;
 	TLabel *Label11;
-	TLabel *Label12;
-	TLabel *Label13;
-	TLabel *Label14;
-	TLabel *Label15;
-	TLabel *Label16;
-	TLabel *Label17;
 	TSpeedButton *SpeedButton1;
 	TSpeedButton *SpeedButton2;
 	TSpeedButton *SpeedButton3;
 	TSpeedButton *SpeedButton4;
-	TLabel *Label19;
-	TEdit *Edit1;
+	TScrollBar *ScrollBar3;
 	TLabel *Label20;
 	TLabel *Label21;
-	TLabel *Label18;
+	TScrollBar *ScrollBar4;
+	TLabel *Label7;
+	TLabel *Label8;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
@@ -56,10 +46,14 @@ __published:	// Composants gérés par l'EDI
 	void __fastcall SpeedButton3Click(TObject *Sender);
 	void __fastcall SpeedButton2Click(TObject *Sender);
 	void __fastcall SpeedButton4Click(TObject *Sender);
-	void __fastcall Button6Click(TObject *Sender);
 	void __fastcall Edit1Change(TObject *Sender);
 	void __fastcall Button5Click(TObject *Sender);
+	void __fastcall ScrollBar3Change(TObject *Sender);
+	void __fastcall ScrollBar4Change(TObject *Sender);
+	void __fastcall ComboBox1Change(TObject *Sender);
 private:	// Déclarations utilisateur
+	ButtonPush *MonThread;
+	void __fastcall FinDeMonThread(TObject *Sender);
 public:		// Déclarations utilisateur
 	__fastcall TForm1(TComponent* Owner);
 };

@@ -25,9 +25,11 @@ TForm1 *Form1;
 #include "DecToAscii.h"
 
 
+
 //BYTE buffer[] = { 0x74, 0x6F, 0x75, 0x72, 0x6E, 0x65, 0x72, 0x38, 0x30 };
 HANDLE hCom;
-const wchar_t* device = L"COM8";
+String value = Form1->ComboBox1->Text;
+wchar_t* device = L""+value.c_str()+"";
 DWORD  result;
 Convert convert;
 using namespace std;
@@ -35,15 +37,16 @@ using namespace std;
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::Button1Click(TObject *Sender)
+}//---------------------------------------------------------------------------void __fastcall TForm1::Button1Click(TObject *Sender)
 {
-        // ----------Tourner-------------
+		// ----------Tourner-------------
+		int value= ScrollBar1->Position + 48;
+		int value2 = ScrollBar4->Position + 48;
 
-		Label3->Caption = ComboBox1->Text;
 
-		BYTE buffer[] = { 0x74, 0x6F, 0x75, 0x72, 0x6E, 0x65, 0x72, 0x38, 0x30};
+
+//		BYTE buffer[] = { 0x74, 0x6F, 0x75, 0x72, 0x6E, 0x65, 0x72, 0x38, 0x30};
+		BYTE buffer[] = { 116, 111, 117, 114, 110, 101, 114, (unsigned char)value, (unsigned char)value2};
 		hCom = CreateFile(
 		device,
 		GENERIC_READ | GENERIC_WRITE,
@@ -73,28 +76,11 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 
 		//-----------Vitesse--------------
 
-	UnicodeString x = Edit1->Text;
-	AnsiString ansiX(x);
-	char* str = new char[ansiX.Length()+1];
-	strcpy(str, ansiX.c_str());
-	Label19->Caption=str;
-	delete[] str;
 
-	char z= *str;
-
-//	char A2[20];
-//	scanf(A2,str);
-
-	int ia = (int)z;
-	char hexString[20];
-	itoa(ia, hexString, 16);
-	Label18->Caption = hexString;
-
-	char d;
-	strcpy(d,hexString);
-
-
-		BYTE buffer[] = { 0x76, 0x69, 0x74, 0x65, 0x73, 0x73, 0x65, "0x"+hexString };
+		int value= ScrollBar2->Position + 48;
+		int value2 = ScrollBar3->Position + 48;
+//		BYTE buffer[] = { 0x76, 0x69, 0x74, 0x65, 0x73, 0x73, 0x65, 0x31, 0x30 };
+		BYTE buffer[] = { 118, 105, 116, 101, 115, 115, 101, (unsigned char)value, (unsigned char)value2 };
 		hCom = CreateFile(
 		device,
 		GENERIC_READ | GENERIC_WRITE,
@@ -119,23 +105,13 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button3Click(TObject *Sender)
 {
-char Nombre[255];
-//unsigned int i = ScrollBar1->Value;
 
-
-//int temp = 0;
-//int len = nb.length();
-//for(int i = 0; i < len; i++)
-//{
-//temp += (nb[i] - 48) * pow((float)10,len-i-1);
-//}
+String value = ComboBox1->Text;
 
 Button3->Caption="Connecté";
 Label3->Caption = ComboBox1->Text;
 Label4->Visible=true;
-//Label5->Caption = ScrollBar1->Position;
-//
-//Label6->Caption = ScrollBar2->Position;
+
 
 
 }
@@ -143,17 +119,18 @@ Label4->Visible=true;
 void __fastcall TForm1::ScrollBar1Change(TObject *Sender)
 {
 	Label5->Caption = ScrollBar1->Position;
+	Label8->Caption = ScrollBar4->Position;
 
-	// Convert Decimal to Hexa
-	int value = ScrollBar1->Position;
-	char hexString[20];
-	itoa(value, hexString, 16);
-	Label10->Caption = hexString;
-
-	// Convert Decimal to ASCII
-	int x = ScrollBar1->Position;
-	convert.ConvertDecimalToASCII(x);
-	Label15->Caption = x;
+//	// Convert Decimal to Hexa
+//	int value = ScrollBar1->Position;
+//	char hexString[20];
+//	itoa(value, hexString, 16);
+//	Label10->Caption = hexString;
+//
+//	// Convert Decimal to ASCII
+//	int x = ScrollBar1->Position;
+//	convert.ConvertDecimalToASCII(x);
+//	Label15->Caption = x;
 
 
 }
@@ -165,18 +142,19 @@ void __fastcall TForm1::ScrollBar2Change(TObject *Sender)
 {
 	Label6->Caption = ScrollBar2->Position;
 
-	// Convert Decimal to Hexa
-	int value = ScrollBar2->Position;
-	char hexString[20];
-	itoa(value, hexString, 16);
-	Label13->Caption = hexString;
 
-	// Convert Decimal to ASCII
-	int x = ScrollBar2->Position;
-//	char buf [3];
-//	itoa(x,buf,10);
-//	printf(buf);
-	Label17->Caption = (char)x;
+//	// Convert Decimal to Hexa
+//	int value = ScrollBar2->Position;
+//	char hexString[20];
+//	itoa(value, hexString, 16);
+//	Label13->Caption = hexString;
+//
+//	// Convert Decimal to ASCII
+//	int x = ScrollBar2->Position;
+////	char buf [3];
+////	itoa(x,buf,10);
+////	printf(buf);
+//	Label17->Caption = (char)x;
 
 }
 //---------------------------------------------------------------------------
@@ -261,7 +239,6 @@ void __fastcall TForm1::SpeedButton2Click(TObject *Sender)
 	CloseHandle(hCom);
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TForm1::SpeedButton4Click(TObject *Sender)
 {
 	 // --------------Droite-------------
@@ -288,16 +265,6 @@ void __fastcall TForm1::SpeedButton4Click(TObject *Sender)
 	CloseHandle(hCom);
 }
 //---------------------------------------------------------------------------
-
-
-void __fastcall TForm1::Button6Click(TObject *Sender)
-{
-	int a=0;
-	Label19->Caption=static_cast<char>( a );
-
-}
-//---------------------------------------------------------------------------
-
 void __fastcall TForm1::Edit1Change(TObject *Sender)
 {
 //UnicodeString x = Edit1->Text;
@@ -332,9 +299,6 @@ void __fastcall TForm1::Edit1Change(TObject *Sender)
 
 }
 //---------------------------------------------------------------------------
-
-
-
 void __fastcall TForm1::Button5Click(TObject *Sender)
 {
 
@@ -356,6 +320,22 @@ void __fastcall TForm1::Button5Click(TObject *Sender)
 //	Label18->Caption = hexString;
 
 
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::ScrollBar3Change(TObject *Sender)
+{
+	Label21->Caption=ScrollBar3->Position;
+}
+//---------------------------------------------------------------------------
+  void __fastcall TForm1::ScrollBar4Change(TObject *Sender)
+{
+	Label8->Caption=ScrollBar4->Position;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::ComboBox1Change(TObject *Sender)
+{
+	Button3->Caption="Connexion";
 }
 //---------------------------------------------------------------------------
 

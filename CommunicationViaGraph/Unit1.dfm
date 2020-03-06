@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 556
+  ClientHeight = 342
   ClientWidth = 969
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -14,8 +14,8 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 455
-    Top = 176
+    Left = 311
+    Top = 109
     Width = 3
     Height = 13
     Font.Charset = DEFAULT_CHARSET
@@ -26,8 +26,8 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 8
-    Top = 383
+    Left = 12
+    Top = 221
     Width = 89
     Height = 13
     Caption = 'Valeur decimal :'
@@ -39,8 +39,8 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 527
-    Top = 96
+    Left = 375
+    Top = 92
     Width = 3
     Height = 13
     Font.Charset = DEFAULT_CHARSET
@@ -51,8 +51,8 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 419
-    Top = 96
+    Left = 267
+    Top = 92
     Width = 108
     Height = 13
     Caption = 'Vous avez choisi le '
@@ -65,8 +65,8 @@ object Form1: TForm1
     Visible = False
   end
   object Label5: TLabel
-    Left = 450
-    Top = 272
+    Left = 114
+    Top = 149
     Width = 3
     Height = 13
     Font.Charset = DEFAULT_CHARSET
@@ -77,59 +77,8 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 103
-    Top = 383
-    Width = 3
-    Height = 13
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label7: TLabel
-    Left = 147
-    Top = 136
-    Width = 99
-    Height = 13
-    Caption = 'Tourner + Valeur '
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label8: TLabel
-    Left = 154
-    Top = 352
-    Width = 92
-    Height = 13
-    Caption = 'Vitesse + Valeur'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label9: TLabel
-    Left = 352
-    Top = 291
-    Width = 69
-    Height = 13
-    Caption = 'valeur hex : '
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label10: TLabel
-    Left = 450
-    Top = 291
+    Left = 107
+    Top = 221
     Width = 3
     Height = 13
     Font.Charset = DEFAULT_CHARSET
@@ -140,8 +89,8 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label11: TLabel
-    Left = 352
-    Top = 272
+    Left = 16
+    Top = 149
     Width = 92
     Height = 13
     Caption = 'Valeur decimal : '
@@ -152,86 +101,9 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label12: TLabel
-    Left = 8
-    Top = 421
-    Width = 69
-    Height = 13
-    Caption = 'valeur hex : '
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label13: TLabel
-    Left = 103
-    Top = 402
-    Width = 3
-    Height = 13
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label14: TLabel
-    Left = 352
-    Top = 310
-    Width = 80
-    Height = 13
-    Caption = 'valeur ASCII : '
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label15: TLabel
-    Left = 450
-    Top = 310
-    Width = 28
-    Height = 13
-    Caption = 'gggg'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label16: TLabel
-    Left = 8
-    Top = 402
-    Width = 80
-    Height = 13
-    Caption = 'Valeur ASCII : '
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label17: TLabel
-    Left = 103
-    Top = 421
-    Width = 35
-    Height = 13
-    Caption = 'ggggg'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object SpeedButton1: TSpeedButton
-    Left = 682
-    Top = 133
+    Left = 746
+    Top = 30
     Width = 87
     Height = 73
     Cursor = crCross
@@ -259,8 +131,8 @@ object Form1: TForm1
     OnClick = SpeedButton1Click
   end
   object SpeedButton2: TSpeedButton
-    Left = 597
-    Top = 212
+    Left = 661
+    Top = 109
     Width = 87
     Height = 73
     Cursor = crCross
@@ -298,8 +170,8 @@ object Form1: TForm1
     OnClick = SpeedButton2Click
   end
   object SpeedButton3: TSpeedButton
-    Left = 682
-    Top = 291
+    Left = 746
+    Top = 188
     Width = 87
     Height = 73
     Cursor = crCross
@@ -334,8 +206,8 @@ object Form1: TForm1
     OnClick = SpeedButton3Click
   end
   object SpeedButton4: TSpeedButton
-    Left = 775
-    Top = 212
+    Left = 839
+    Top = 109
     Width = 87
     Height = 73
     Cursor = crCross
@@ -368,19 +240,12 @@ object Form1: TForm1
       FFFFFFFFFFFFFFFFFC00FFFFFFFFFFFFFFFFFFFFFC00}
     OnClick = SpeedButton4Click
   end
-  object Label19: TLabel
-    Left = 436
-    Top = 402
-    Width = 15
-    Height = 13
-    Caption = 'iciiii'
-  end
   object Label20: TLabel
-    Left = 304
-    Top = 383
-    Width = 42
+    Left = 12
+    Top = 240
+    Width = 89
     Height = 13
-    Caption = 'Valeur :'
+    Caption = 'Valeur decimal :'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clSilver
     Font.Height = -11
@@ -389,35 +254,59 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label21: TLabel
-    Left = 252
-    Top = 402
-    Width = 8
+    Left = 107
+    Top = 240
+    Width = 16
     Height = 13
-    Caption = '+'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clSilver
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
-  object Label18: TLabel
-    Left = 468
-    Top = 402
-    Width = 37
+  object Label7: TLabel
+    Left = 16
+    Top = 168
+    Width = 92
     Height = 13
-    Caption = 'Label18'
+    Caption = 'Valeur d'#233'cimal : '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clSilver
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 112
+    Top = 168
+    Width = 3
+    Height = 13
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clSilver
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Button1: TButton
-    Left = 147
-    Top = 176
+    Left = 472
+    Top = 145
     Width = 99
-    Height = 41
+    Height = 40
     Caption = 'Tourner'
     TabOrder = 0
     OnClick = Button1Click
   end
   object ComboBox1: TComboBox
-    Left = 387
-    Top = 44
+    Left = 235
+    Top = 40
     Width = 99
     Height = 21
     TabOrder = 1
     Text = 'COM1'
+    OnChange = ComboBox1Change
     Items.Strings = (
       '--COM--'
       'COM1'
@@ -446,17 +335,17 @@ object Form1: TForm1
       'COM24')
   end
   object Button2: TButton
-    Left = 147
-    Top = 392
+    Left = 476
+    Top = 221
     Width = 99
-    Height = 41
+    Height = 40
     Caption = 'Vitesse '
     TabOrder = 2
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 508
-    Top = 34
+    Left = 356
+    Top = 30
     Width = 99
     Height = 41
     Caption = 'Connexion'
@@ -464,51 +353,45 @@ object Form1: TForm1
     OnClick = Button3Click
   end
   object ScrollBar1: TScrollBar
-    Left = 30
-    Top = 223
+    Left = 129
+    Top = 145
     Width = 337
     Height = 17
-    Max = 300
-    Min = 1
+    Max = 9
     PageSize = 0
     Position = 1
     TabOrder = 4
     OnChange = ScrollBar1Change
   end
   object ScrollBar2: TScrollBar
-    Left = -6
-    Top = 490
+    Left = 129
+    Top = 221
     Width = 341
     Height = 17
-    Min = 1
+    Max = 9
     PageSize = 0
     Position = 1
     TabOrder = 5
     OnChange = ScrollBar2Change
   end
-  object Button4: TButton
-    Left = 147
-    Top = 246
-    Width = 99
-    Height = 42
-    Caption = 'Envoyer'
+  object ScrollBar3: TScrollBar
+    Left = 129
+    Top = 244
+    Width = 341
+    Height = 17
+    Max = 9
+    PageSize = 0
     TabOrder = 6
+    OnChange = ScrollBar3Change
   end
-  object Button5: TButton
-    Left = 268
-    Top = 443
-    Width = 99
-    Height = 41
-    Caption = 'Envoyer'
+  object ScrollBar4: TScrollBar
+    Left = 129
+    Top = 168
+    Width = 337
+    Height = 17
+    Max = 9
+    PageSize = 0
     TabOrder = 7
-    OnClick = Button5Click
-  end
-  object Edit1: TEdit
-    Left = 264
-    Top = 402
-    Width = 121
-    Height = 21
-    TabOrder = 8
-    OnChange = Edit1Change
+    OnChange = ScrollBar4Change
   end
 end
