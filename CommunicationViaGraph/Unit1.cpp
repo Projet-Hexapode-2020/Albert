@@ -25,11 +25,11 @@ TForm1 *Form1;
 #include "DecToAscii.h"
 
 
-
-//BYTE buffer[] = { 0x74, 0x6F, 0x75, 0x72, 0x6E, 0x65, 0x72, 0x38, 0x30 };
 HANDLE hCom;
-String value = Form1->ComboBox1->Text;
-wchar_t* device = L""+value.c_str()+"";
+ThreadConnexion *monThread;
+ButtonUp *up;
+
+const wchar_t* device = L"COM8";
 DWORD  result;
 Convert convert;
 using namespace std;
@@ -42,8 +42,6 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 		// ----------Tourner-------------
 		int value= ScrollBar1->Position + 48;
 		int value2 = ScrollBar4->Position + 48;
-
-
 
 //		BYTE buffer[] = { 0x74, 0x6F, 0x75, 0x72, 0x6E, 0x65, 0x72, 0x38, 0x30};
 		BYTE buffer[] = { 116, 111, 117, 114, 110, 101, 114, (unsigned char)value, (unsigned char)value2};
@@ -106,11 +104,15 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 void __fastcall TForm1::Button3Click(TObject *Sender)
 {
 
-String value = ComboBox1->Text;
+//String value = ComboBox1->Text;
 
-Button3->Caption="Connecté";
-Label3->Caption = ComboBox1->Text;
-Label4->Visible=true;
+	Button3->Caption="Connecté";
+	Label3->Caption = ComboBox1->Text;
+	Label4->Visible=true;
+
+//	monThread = new ThreadConnexion(false);
+//	monThread->OnTerminate = FinDeMonThread;
+//	EnableWindow(Handle, false);
 
 
 
@@ -120,19 +122,6 @@ void __fastcall TForm1::ScrollBar1Change(TObject *Sender)
 {
 	Label5->Caption = ScrollBar1->Position;
 	Label8->Caption = ScrollBar4->Position;
-
-//	// Convert Decimal to Hexa
-//	int value = ScrollBar1->Position;
-//	char hexString[20];
-//	itoa(value, hexString, 16);
-//	Label10->Caption = hexString;
-//
-//	// Convert Decimal to ASCII
-//	int x = ScrollBar1->Position;
-//	convert.ConvertDecimalToASCII(x);
-//	Label15->Caption = x;
-
-
 }
 
 //---------------------------------------------------------------------------
@@ -141,53 +130,43 @@ void __fastcall TForm1::ScrollBar1Change(TObject *Sender)
 void __fastcall TForm1::ScrollBar2Change(TObject *Sender)
 {
 	Label6->Caption = ScrollBar2->Position;
-
-
-//	// Convert Decimal to Hexa
-//	int value = ScrollBar2->Position;
-//	char hexString[20];
-//	itoa(value, hexString, 16);
-//	Label13->Caption = hexString;
-//
-//	// Convert Decimal to ASCII
-//	int x = ScrollBar2->Position;
-////	char buf [3];
-////	itoa(x,buf,10);
-////	printf(buf);
-//	Label17->Caption = (char)x;
-
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::SpeedButton1Click(TObject *Sender)
 {
 		// --------------Avancer-------------
-		BYTE buffer[] = { 0x61, 0x76, 0x61, 0x6E, 0x63, 0x65, 0x72, 0x31, 0x30 };
-		hCom = CreateFile(
-		device,
-		GENERIC_READ | GENERIC_WRITE,
-		0,
-		0,
-		OPEN_EXISTING,
-		0,
-		0);
+//
+//		BYTE buffer[] = { 0x61, 0x76, 0x61, 0x6E, 0x63, 0x65, 0x72, 0x31, 0x30 };
+//		hCom = CreateFile(
+//		device,
+//		GENERIC_READ | GENERIC_WRITE,
+//		0,
+//		0,
+//		OPEN_EXISTING,
+//		0,
+//		0);
+//
+//	if (hCom != INVALID_HANDLE_VALUE)
+//	{
+//
+//		WriteFile(hCom, buffer, (DWORD)sizeof(buffer), &result, NULL);
+//		if (GetLastError() != ERROR_IO_PENDING)
+//		{
+//		}
+//
+//	}
+//
+//	CloseHandle(hCom);
 
-	if (hCom != INVALID_HANDLE_VALUE)
-	{
 
-		WriteFile(hCom, buffer, (DWORD)sizeof(buffer), &result, NULL);
-		if (GetLastError() != ERROR_IO_PENDING)
-		{
-		}
 
-	}
-
-	CloseHandle(hCom);
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::SpeedButton3Click(TObject *Sender)
 {
 		// --------------Reculer-------------
+
 		BYTE buffer[] = { 0x72, 0x65, 0x63, 0x75, 0x6C, 0x65, 0x72, 0x31, 0x30 };
 		hCom = CreateFile(
 		device,
@@ -242,6 +221,7 @@ void __fastcall TForm1::SpeedButton2Click(TObject *Sender)
 void __fastcall TForm1::SpeedButton4Click(TObject *Sender)
 {
 	 // --------------Droite-------------
+
 		BYTE buffer[] = { 0x64, 0x72, 0x6F, 0x69, 0x74, 0x65, 0x31, 0x30   };
 		hCom = CreateFile(
 		device,
@@ -337,5 +317,59 @@ void __fastcall TForm1::ComboBox1Change(TObject *Sender)
 {
 	Button3->Caption="Connexion";
 }
+//---------------------------------------------------------------------------
+void __fastcall  TForm1::FinDeMonThread(TObject *Sender)
+{
+		EnableWindow(Handle, true);
+		Label10->Caption = "Thread terminé";
+		delete monThread;
+		monThread = NULL;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
+{
+	  if(monThread) Action = caNone;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button4Click(TObject *Sender)
+{
+  monThread->Execute();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::SpeedButton1MouseDown(TObject *Sender, TMouseButton Button,
+          TShiftState Shift, int X, int Y)
+{
+//		int i=1;
+//		while(i<10){
+//		BYTE buffer[] = { 0x61, 0x76, 0x61, 0x6E, 0x63, 0x65, 0x72, 0x31, 0x30 };
+//		hCom = CreateFile(
+//		device,
+//		GENERIC_READ | GENERIC_WRITE,
+//		0,
+//		0,
+//		OPEN_EXISTING,
+//		0,
+//		0);
+//
+//	if (hCom != INVALID_HANDLE_VALUE)
+//	{
+//
+//		WriteFile(hCom, buffer, (DWORD)sizeof(buffer), &result, NULL);
+//		if (GetLastError() != ERROR_IO_PENDING)
+//		{
+//		}
+//
+//	}
+//
+//	CloseHandle(hCom);
+//}
+   ButtonUp *myUp = new ButtonUp(false);
+
+}
+
+
+
+
 //---------------------------------------------------------------------------
 

@@ -129,6 +129,7 @@ object Form1: TForm1
     ParentShowHint = False
     ShowHint = False
     OnClick = SpeedButton1Click
+    OnMouseDown = SpeedButton1MouseDown
   end
   object SpeedButton2: TSpeedButton
     Left = 661
@@ -256,7 +257,7 @@ object Form1: TForm1
   object Label21: TLabel
     Left = 107
     Top = 240
-    Width = 16
+    Width = 3
     Height = 13
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clSilver
@@ -289,6 +290,34 @@ object Form1: TForm1
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
+  end
+  object Label9: TLabel
+    Left = 224
+    Top = 288
+    Width = 33
+    Height = 17
+    Caption = 'Label9'
+  end
+  object Label10: TLabel
+    Left = 297
+    Top = 288
+    Width = 37
+    Height = 13
+    Caption = 'Label10'
+  end
+  object Label12: TLabel
+    Left = 616
+    Top = 288
+    Width = 37
+    Height = 13
+    Caption = 'Label12'
+  end
+  object Label13: TLabel
+    Left = 672
+    Top = 288
+    Width = 37
+    Height = 13
+    Caption = 'Label13'
   end
   object Button1: TButton
     Left = 472
@@ -393,5 +422,22 @@ object Form1: TForm1
     PageSize = 0
     TabOrder = 7
     OnChange = ScrollBar4Change
+  end
+  object Button4: TButton
+    Left = 107
+    Top = 277
+    Width = 97
+    Height = 38
+    Caption = 'D'#233'but du thread'
+    TabOrder = 8
+    OnClick = Button4Click
+  end
+  object Button5: TButton
+    Left = 356
+    Top = 278
+    Width = 105
+    Height = 35
+    Caption = 'Fin du thread'
+    TabOrder = 9
   end
 end
