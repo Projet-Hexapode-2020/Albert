@@ -12,6 +12,7 @@ object Form1: TForm1
   Font.Name = 'Small Fonts'
   Font.Style = [fsBold]
   OldCreateOrder = False
+  Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel

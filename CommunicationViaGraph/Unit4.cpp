@@ -22,6 +22,6 @@ void __fastcall TForm4::Button1Click(TObject *Sender)
 		Form1->Visible=false;
 		Form4->Visible=false;
 		Form5->Visible=true;
-		Form4->
+
 }
 //---------------------------------------------------------------------------
