@@ -1,0 +1,20 @@
+//---------------------------------------------------------------------------
+
+#ifndef ButtonUpH
+#define ButtonUpH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+//---------------------------------------------------------------------------
+class ButtonUp : public TThread
+{
+private:
+protected:
+
+public:
+	__fastcall ButtonUp(bool CreateSuspended);
+	void __fastcall Execute();
+	void __fastcall AffMessage();
+	void __fastcall UpdateCaption();
+};
+//---------------------------------------------------------------------------
+#endif

@@ -7,6 +7,8 @@
 #include <Vcl.Styles.hpp>
 #include <Vcl.Themes.hpp>
 USEFORM("Unit1.cpp", Form1);
+USEFORM("Unit4.cpp", Form4);
+USEFORM("Unit5.cpp", Form5);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -16,6 +18,8 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->MainFormOnTaskBar = true;
 		TStyleManager::TrySetStyle("Onyx Blue");
 		Application->CreateForm(__classid(TForm1), &Form1);
+		Application->CreateForm(__classid(TForm4), &Form4);
+		Application->CreateForm(__classid(TForm5), &Form5);
 		Application->Run();
 	}
 	catch (Exception &exception)

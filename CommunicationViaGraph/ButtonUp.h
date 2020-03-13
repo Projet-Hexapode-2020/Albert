@@ -9,11 +9,12 @@ class ButtonUp : public TThread
 {
 private:
 protected:
-	void __fastcall Execute();
+void __fastcall Execute();
 	void __fastcall AffMessage();
+	void __fastcall Haut();
+	void __fastcall UpdateCaption();
 public:
 	__fastcall ButtonUp(bool CreateSuspended);
-	void __fastcall UpdateCaption();
 };
 //---------------------------------------------------------------------------
 #endif

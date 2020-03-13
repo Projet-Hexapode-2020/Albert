@@ -1,21 +1,22 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Form1'
-  ClientHeight = 342
-  ClientWidth = 969
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
+  Cursor = crCross
+  Caption = 'HexaGanG '
+  ClientHeight = 582
+  ClientWidth = 470
+  Color = clCream
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clRed
   Font.Height = -11
-  Font.Name = 'Tahoma'
-  Font.Style = []
+  Font.Name = 'Small Fonts'
+  Font.Style = [fsBold]
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 311
-    Top = 109
+    Left = 178
+    Top = 237
     Width = 3
     Height = 13
     Font.Charset = DEFAULT_CHARSET
@@ -25,22 +26,9 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
   end
-  object Label2: TLabel
-    Left = 12
-    Top = 221
-    Width = 89
-    Height = 13
-    Caption = 'Valeur decimal :'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object Label3: TLabel
-    Left = 375
-    Top = 92
+    Left = 232
+    Top = 76
     Width = 3
     Height = 13
     Font.Charset = DEFAULT_CHARSET
@@ -51,8 +39,8 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 267
-    Top = 92
+    Left = 124
+    Top = 76
     Width = 108
     Height = 13
     Caption = 'Vous avez choisi le '
@@ -64,46 +52,9 @@ object Form1: TForm1
     ParentFont = False
     Visible = False
   end
-  object Label5: TLabel
-    Left = 114
-    Top = 149
-    Width = 3
-    Height = 13
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label6: TLabel
-    Left = 107
-    Top = 221
-    Width = 3
-    Height = 13
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label11: TLabel
-    Left = 16
-    Top = 149
-    Width = 92
-    Height = 13
-    Caption = 'Valeur decimal : '
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object SpeedButton1: TSpeedButton
-    Left = 746
-    Top = 30
+    Left = 195
+    Top = 271
     Width = 87
     Height = 73
     Cursor = crCross
@@ -128,12 +79,12 @@ object Form1: TForm1
       FE00FFFFFFDFFFFFFE00FFFFFFFFFFFFFE00FFFFFFFFFFFFFE00}
     ParentShowHint = False
     ShowHint = False
-    OnClick = SpeedButton1Click
     OnMouseDown = SpeedButton1MouseDown
+    OnMouseUp = SpeedButton1MouseUp
   end
   object SpeedButton2: TSpeedButton
-    Left = 661
-    Top = 109
+    Left = 110
+    Top = 350
     Width = 87
     Height = 73
     Cursor = crCross
@@ -168,11 +119,12 @@ object Form1: TForm1
       FFFFFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFEFFFF
       FFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFFFFFF
       FFFE}
-    OnClick = SpeedButton2Click
+    OnMouseDown = SpeedButton2MouseDown
+    OnMouseUp = SpeedButton2MouseUp
   end
   object SpeedButton3: TSpeedButton
-    Left = 746
-    Top = 188
+    Left = 195
+    Top = 429
     Width = 87
     Height = 73
     Cursor = crCross
@@ -204,11 +156,12 @@ object Form1: TForm1
       FFE0FFFFFFFFFFFFFFE0FFFFFFFFFFFFFFE0FFFFFFFFFFFFFFE0FFFFFFFFFFFF
       FFE0}
     ParentFont = False
-    OnClick = SpeedButton3Click
+    OnMouseDown = SpeedButton3MouseDown
+    OnMouseUp = SpeedButton3MouseUp
   end
   object SpeedButton4: TSpeedButton
-    Left = 839
-    Top = 109
+    Left = 288
+    Top = 350
     Width = 87
     Height = 73
     Cursor = crCross
@@ -239,205 +192,96 @@ object Form1: TForm1
       FC00FFFFFFFFFFEFFFFFFFFFFC00FFFFFFFFFFFFFFFFFFFFFC00FFFFFFFFFFFF
       FFFFFFFFFC00FFFFFFFFFFFFFFFFFFFFFC00FFFFFFFFFFFFFFFFFFFFFC00FFFF
       FFFFFFFFFFFFFFFFFC00FFFFFFFFFFFFFFFFFFFFFC00}
-    OnClick = SpeedButton4Click
-  end
-  object Label20: TLabel
-    Left = 12
-    Top = 240
-    Width = 89
-    Height = 13
-    Caption = 'Valeur decimal :'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label21: TLabel
-    Left = 107
-    Top = 240
-    Width = 3
-    Height = 13
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label7: TLabel
-    Left = 16
-    Top = 168
-    Width = 92
-    Height = 13
-    Caption = 'Valeur d'#233'cimal : '
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label8: TLabel
-    Left = 112
-    Top = 168
-    Width = 3
-    Height = 13
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
+    OnMouseDown = SpeedButton4MouseDown
+    OnMouseUp = SpeedButton4MouseUp
   end
   object Label9: TLabel
-    Left = 224
-    Top = 288
-    Width = 33
-    Height = 17
-    Caption = 'Label9'
+    Left = 144
+    Top = 209
+    Width = 5
+    Height = 13
   end
   object Label10: TLabel
-    Left = 297
-    Top = 288
-    Width = 37
+    Left = 144
+    Top = 228
+    Width = 5
     Height = 13
-    Caption = 'Label10'
   end
-  object Label12: TLabel
-    Left = 616
-    Top = 288
-    Width = 37
-    Height = 13
-    Caption = 'Label12'
-  end
-  object Label13: TLabel
-    Left = 672
-    Top = 288
-    Width = 37
-    Height = 13
-    Caption = 'Label13'
-  end
-  object Button1: TButton
-    Left = 472
-    Top = 145
-    Width = 99
-    Height = 40
-    Caption = 'Tourner'
-    TabOrder = 0
-    OnClick = Button1Click
+  object SpeedButton5: TSpeedButton
+    Left = 156
+    Top = 120
+    Width = 152
+    Height = 65
+    Caption = 'Mode de pilotage'
+    OnClick = SpeedButton5Click
   end
   object ComboBox1: TComboBox
-    Left = 235
+    Left = 133
     Top = 40
     Width = 99
     Height = 21
-    TabOrder = 1
-    Text = 'COM1'
+    TabOrder = 0
+    Text = '--COM--'
     OnChange = ComboBox1Change
     Items.Strings = (
       '--COM--'
-      'COM1'
-      'COM2'
-      'COM3'
-      'COM4'
-      'COM5'
-      'COM6'
-      'COM7'
-      'COM8'
-      'COM9'
-      'COM10'
-      'COM11'
-      'COM12'
-      'COM13'
-      'COM14'
-      'COM15'
-      'COM16'
-      'COM17'
-      'COM18'
-      'COM19'
-      'COM20'
-      'COM21'
-      'COM22'
-      'COM23'
-      'COM24')
-  end
-  object Button2: TButton
-    Left = 476
-    Top = 221
-    Width = 99
-    Height = 40
-    Caption = 'Vitesse '
-    TabOrder = 2
-    OnClick = Button2Click
+      'L"COM1"'
+      'L"COM2"'
+      'L"COM3"'
+      'L"COM4"'
+      'L"COM5"'
+      'L"COM6"'
+      'L"COM7"'
+      'L"COM8"'
+      'L"COM9"'
+      'L"COM10"'
+      'L"COM11"'
+      'L"COM12"'
+      'L"COM13"'
+      'L"COM14"'
+      'L"COM15"'
+      'L"COM16"'
+      'L"COM17"'
+      'L"COM18"'
+      'L"COM19"'
+      'L"COM20"'
+      'L"COM21"')
   end
   object Button3: TButton
-    Left = 356
+    Left = 265
     Top = 30
     Width = 99
     Height = 41
     Caption = 'Connexion'
-    TabOrder = 3
+    TabOrder = 1
     OnClick = Button3Click
   end
-  object ScrollBar1: TScrollBar
-    Left = 129
-    Top = 145
-    Width = 337
-    Height = 17
-    Max = 9
-    PageSize = 0
-    Position = 1
-    TabOrder = 4
-    OnChange = ScrollBar1Change
+  object TimerHaut: TTimer
+    Enabled = False
+    Interval = 50
+    OnTimer = TimerHautTimer
+    Left = 217
+    Top = 224
   end
-  object ScrollBar2: TScrollBar
-    Left = 129
-    Top = 221
-    Width = 341
-    Height = 17
-    Max = 9
-    PageSize = 0
-    Position = 1
-    TabOrder = 5
-    OnChange = ScrollBar2Change
+  object TimerGauche: TTimer
+    Enabled = False
+    Interval = 50
+    OnTimer = TimerGaucheTimer
+    Left = 57
+    Top = 368
   end
-  object ScrollBar3: TScrollBar
-    Left = 129
-    Top = 244
-    Width = 341
-    Height = 17
-    Max = 9
-    PageSize = 0
-    TabOrder = 6
-    OnChange = ScrollBar3Change
+  object TimerDroite: TTimer
+    Enabled = False
+    Interval = 50
+    OnTimer = TimerDroiteTimer
+    Left = 393
+    Top = 368
   end
-  object ScrollBar4: TScrollBar
-    Left = 129
-    Top = 168
-    Width = 337
-    Height = 17
-    Max = 9
-    PageSize = 0
-    TabOrder = 7
-    OnChange = ScrollBar4Change
-  end
-  object Button4: TButton
-    Left = 107
-    Top = 277
-    Width = 97
-    Height = 38
-    Caption = 'D'#233'but du thread'
-    TabOrder = 8
-    OnClick = Button4Click
-  end
-  object Button5: TButton
-    Left = 356
-    Top = 278
-    Width = 105
-    Height = 35
-    Caption = 'Fin du thread'
-    TabOrder = 9
+  object TimerBas: TTimer
+    Enabled = False
+    Interval = 50
+    OnTimer = TimerBasTimer
+    Left = 209
+    Top = 512
   end
 end

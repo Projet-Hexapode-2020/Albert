@@ -5,6 +5,7 @@
 
 #include "ButtonUp.h"
 #include "Unit1.h"
+
 #include <iostream>
 #include <thread>
 #include <winscard.h>
@@ -35,10 +36,13 @@ DWORD  result;
 //
 //   où UpdateCaption pourrait ressembler à :
 //
-	 void __fastcall ButtonUp::UpdateCaption()
-	  {
-		Form1->Button3->Caption="Mis à jour dans un thread";
-	  }
+
+
+//---------------------------------------------------------------------------
+void __fastcall ButtonUp::UpdateCaption()
+{
+	Form1->Label9->Caption="Mise à jour dans un thread";
+}
 //---------------------------------------------------------------------------
 
 __fastcall ButtonUp::ButtonUp(bool CreateSuspended)
@@ -50,14 +54,11 @@ void __fastcall ButtonUp::Execute()
 {
 	//---- Placer le code du thread ici ----
 
-	FreeOnTerminate = true;
-	int i=1;
 
-		while(i<100){
 
-		if (Form1->SpeedButton1->OnMouseDown) {
-
-		BYTE buffer[] = { 0x61, 0x76, 0x61, 0x6E, 0x63, 0x65, 0x72, 0x31, 0x30 };
+   while(Terminated==false){
+   if (Form1->SpeedButton1->OnMouseDown) {
+	  BYTE buffer[] = { 0x61, 0x76, 0x61, 0x6E, 0x63, 0x65, 0x72, 0x30, 0x31 };
 		hCom = CreateFile(
 		device,
 		GENERIC_READ | GENERIC_WRITE,
@@ -78,22 +79,27 @@ void __fastcall ButtonUp::Execute()
 		}
 
 		CloseHandle(hCom);
-		}else{
 
-		Sleep(5000);
+	Synchronize(&UpdateCaption);
+//	Synchronize(&Haut);
+	Synchronize(&AffMessage);
 
-        }
+
+
+
+
 		
+
 }
-Synchronize(&UpdateCaption);
 
 }
 //---------------------------------------------------------------------------
  void __fastcall ButtonUp::AffMessage()
 {
-	   if (Form1->Button4->OnClick) {
 
 		 Form1->Label12->Caption="Application externe 'up' lancée  ";
-	   }
 
 }
+//---------------------------------------------------------------------------
+
+
