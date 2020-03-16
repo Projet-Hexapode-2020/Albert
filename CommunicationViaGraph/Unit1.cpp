@@ -38,27 +38,12 @@ using namespace std;
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
-
-	   Form1->Visible=false;
-
+	Form1->Close();
 }//---------------------------------------------------------------------------std::wstring TForm1::StringToWString(const std::string& s){
 	std::wstring temp(s.length(),L' ');
 	std::copy(s.begin(), s.end(), temp.begin());
     return temp;
 }//---------------------------------------------------------------------------
-void __fastcall TForm1::Button3Click(TObject *weshSender)
-{
-	Button3->Caption="Connecté";
-	Label3->Caption = ComboBox1->Text;
-	Label4->Visible=true;
-
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::ComboBox1Change(TObject *Sender)
-{
-	Button3->Caption="Connexion";
-}
-//---------------------------------------------------------------------------
 void __fastcall  TForm1::FinDeMonThread(TObject *Sender)
 {
 	Label10->Caption = "Thread terminé";

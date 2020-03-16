@@ -21,11 +21,7 @@ using namespace std;
 class TForm1 : public TForm
 {
 __published:	// Composants gérés par l'EDI
-	TComboBox *ComboBox1;
-	TButton *Button3;
 	TLabel *Label1;
-	TLabel *Label3;
-	TLabel *Label4;
 	TSpeedButton *SpeedButton1;
 	TSpeedButton *SpeedButton2;
 	TSpeedButton *SpeedButton3;
@@ -37,8 +33,8 @@ __published:	// Composants gérés par l'EDI
 	TTimer *TimerDroite;
 	TTimer *TimerBas;
 	TSpeedButton *SpeedButton5;
-	void __fastcall Button3Click(TObject *Sender);
-	void __fastcall ComboBox1Change(TObject *Sender);
+	TButton *Button1;
+	TButton *Button2;
 	void __fastcall SpeedButton1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
           int X, int Y);
 	void __fastcall SpeedButton1MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift,
@@ -69,7 +65,7 @@ private:	// Déclarations utilisateur
 		std::wstring StringToWString(const std::string& s);
 public:		// Déclarations utilisateur
 	__fastcall TForm1(TComponent* Owner);
-    const wchar_t* value = ComboBox1->Text.c_str();
+
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm1 *Form1;

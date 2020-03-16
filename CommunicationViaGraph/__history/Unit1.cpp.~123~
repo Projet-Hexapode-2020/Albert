@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "Unit1.h"
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -27,8 +28,9 @@ TForm1 *Form1;
 #include <algorithm>
 
 
+
 HANDLE hCom;
-const wchar_t* device;
+const wchar_t* device = L"COM8";
 DWORD  result;
 Convert convert;
 using namespace std;
@@ -36,112 +38,14 @@ using namespace std;
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
+
+	   Form1->Visible=false;
+
 }//---------------------------------------------------------------------------std::wstring TForm1::StringToWString(const std::string& s){
 	std::wstring temp(s.length(),L' ');
 	std::copy(s.begin(), s.end(), temp.begin());
     return temp;
-}//---------------------------------------------------------------------------void __fastcall TForm1::Button1Click(TObject *Sender)
-{
-		// ----------Tourner-------------
-		int value= ScrollBar1->Position + 48;
-		int value2 = ScrollBar4->Position + 48;
-
-//		BYTE buffer[] = { 0x74, 0x6F, 0x75, 0x72, 0x6E, 0x65, 0x72, 0x38, 0x30};
-		BYTE buffer[] = { 116, 111, 117, 114, 110, 101, 114, (unsigned char)value, (unsigned char)value2};
-		hCom = CreateFile(
-		device,
-		GENERIC_READ | GENERIC_WRITE,
-        0,
-		0,
-        OPEN_EXISTING,
-        0,
-		0);
-
-	if (hCom != INVALID_HANDLE_VALUE)
-    {
-
-		WriteFile(hCom, buffer, (DWORD)sizeof(buffer), &result, NULL);
-		if (GetLastError() != ERROR_IO_PENDING)
-		{
-        }
-
-	}
-
-
-
-	CloseHandle(hCom);
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::Button2Click(TObject *Sender)
-{
-
-		//-----------Vitesse--------------
-
-		int value= ScrollBar2->Position + 48;
-//		int value2 = ScrollBar3->Position + 48;
-//		BYTE buffer[] = { 0x76, 0x69, 0x74, 0x65, 0x73, 0x73, 0x65, 0x31, 0x30 };
-		BYTE buffer[] = { 118, 105, 116, 101, 115, 115, 101, (unsigned char)value, 48 };
-		hCom = CreateFile(
-		device,
-		GENERIC_READ | GENERIC_WRITE,
-		0,
-		0,
-		OPEN_EXISTING,
-		0,
-		0);
-
-	if (hCom != INVALID_HANDLE_VALUE)
-	{
-
-		WriteFile(hCom, buffer, (DWORD)sizeof(buffer), &result, NULL);
-		if (GetLastError() != ERROR_IO_PENDING)
-		{
-		}
-
-	}
-
-	CloseHandle(hCom);
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::Button3Click(TObject *weshSender)
-{
-	Button3->Caption="Connecté";
-	Label3->Caption = ComboBox1->Text;
-	Label4->Visible=true;
-
-	const wchar_t* value = Form1->ComboBox1->Text.c_str();
-	const wchar_t* device = value;  //= L"COM8";
-	Label12->Caption=value;
-
-}
-//---------------------------------------------------------------------------
-void __fastcall TForm1::ScrollBar1Change(TObject *Sender)
-{
-	Label5->Caption = ScrollBar1->Position;
-	Label8->Caption = ScrollBar4->Position;
-}
-
-//---------------------------------------------------------------------------
-
-
-void __fastcall TForm1::ScrollBar2Change(TObject *Sender)
-{
-	Label6->Caption = ScrollBar2->Position;
-}
-//---------------------------------------------------------------------------
-
-
-  void __fastcall TForm1::ScrollBar4Change(TObject *Sender)
-{
-	Label8->Caption=ScrollBar4->Position;
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TForm1::ComboBox1Change(TObject *Sender)
-{
-	Button3->Caption="Connexion";
-}
-//---------------------------------------------------------------------------
+}//---------------------------------------------------------------------------
 void __fastcall  TForm1::FinDeMonThread(TObject *Sender)
 {
 	Label10->Caption = "Thread terminé";
@@ -189,7 +93,9 @@ void __fastcall TForm1::TimerHautTimer(TObject *Sender)
 
 void __fastcall TForm1::TimerGaucheTimer(TObject *Sender)
 {
-		BYTE buffer[] = { 0x67, 0x61, 0x75, 0x63, 0x68, 0x65, 0x31, 0x30  };
+		// --------------Gauche-------------
+
+		BYTE buffer[] = { 0x67, 0x61, 0x75, 0x63, 0x68, 0x65, 0x30, 0x31  };
 		hCom = CreateFile(
 		device,
 		GENERIC_READ | GENERIC_WRITE,
@@ -217,7 +123,7 @@ void __fastcall TForm1::TimerBasTimer(TObject *Sender)
 {
 		// --------------Reculer-------------
 
-		BYTE buffer[] = { 0x72, 0x65, 0x63, 0x75, 0x6C, 0x65, 0x72, 0x31, 0x30 };
+		BYTE buffer[] = { 0x72, 0x65, 0x63, 0x75, 0x6C, 0x65, 0x72, 0x30, 0x31 };
 		hCom = CreateFile(
 		device,
 		GENERIC_READ | GENERIC_WRITE,
@@ -245,7 +151,7 @@ void __fastcall TForm1::TimerDroiteTimer(TObject *Sender)
 {
 	 // --------------Droite-------------
 
-		BYTE buffer[] = { 0x64, 0x72, 0x6F, 0x69, 0x74, 0x65, 0x31, 0x30   };
+		BYTE buffer[] = { 0x64, 0x72, 0x6F, 0x69, 0x74, 0x65, 0x30, 0x31   };
 		hCom = CreateFile(
 		device,
 		GENERIC_READ | GENERIC_WRITE,
@@ -305,12 +211,15 @@ TimerDroite->Enabled=true;
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::SpeedButton4MouseUp(TObject *Sender, TMouseButton Button,
-          TShiftState Shift, int X, int Y)
+		  TShiftState Shift, int X, int Y)
 {
 TimerDroite->Enabled=false;
 }
 //---------------------------------------------------------------------------
-
-
-
+void __fastcall TForm1::SpeedButton5Click(TObject *Sender)
+{
+	Form5->Visible=true;
+	Form1->Visible=false;
+}
+//---------------------------------------------------------------------------
 

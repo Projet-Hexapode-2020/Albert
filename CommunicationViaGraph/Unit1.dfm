@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Cursor = crCross
   Caption = 'HexaGanG '
-  ClientHeight = 582
+  ClientHeight = 613
   ClientWidth = 470
   Color = clCream
   Font.Charset = ANSI_CHARSET
@@ -16,8 +16,8 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 178
-    Top = 237
+    Left = 170
+    Top = 53
     Width = 3
     Height = 13
     Font.Charset = DEFAULT_CHARSET
@@ -26,36 +26,10 @@ object Form1: TForm1
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-  end
-  object Label3: TLabel
-    Left = 232
-    Top = 76
-    Width = 3
-    Height = 13
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label4: TLabel
-    Left = 124
-    Top = 76
-    Width = 108
-    Height = 13
-    Caption = 'Vous avez choisi le '
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clSilver
-    Font.Height = -11
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-    Visible = False
   end
   object SpeedButton1: TSpeedButton
-    Left = 195
-    Top = 271
+    Left = 187
+    Top = 103
     Width = 87
     Height = 73
     Cursor = crCross
@@ -84,8 +58,8 @@ object Form1: TForm1
     OnMouseUp = SpeedButton1MouseUp
   end
   object SpeedButton2: TSpeedButton
-    Left = 110
-    Top = 350
+    Left = 102
+    Top = 182
     Width = 87
     Height = 73
     Cursor = crCross
@@ -124,8 +98,8 @@ object Form1: TForm1
     OnMouseUp = SpeedButton2MouseUp
   end
   object SpeedButton3: TSpeedButton
-    Left = 195
-    Top = 429
+    Left = 187
+    Top = 261
     Width = 87
     Height = 73
     Cursor = crCross
@@ -161,8 +135,8 @@ object Form1: TForm1
     OnMouseUp = SpeedButton3MouseUp
   end
   object SpeedButton4: TSpeedButton
-    Left = 288
-    Top = 350
+    Left = 280
+    Top = 182
     Width = 87
     Height = 73
     Cursor = crCross
@@ -197,92 +171,67 @@ object Form1: TForm1
     OnMouseUp = SpeedButton4MouseUp
   end
   object Label9: TLabel
-    Left = 144
-    Top = 209
+    Left = 136
+    Top = 25
     Width = 5
     Height = 13
   end
   object Label10: TLabel
-    Left = 144
-    Top = 228
+    Left = 136
+    Top = 44
     Width = 5
     Height = 13
   end
   object SpeedButton5: TSpeedButton
     Left = 156
-    Top = 120
+    Top = 8
     Width = 152
     Height = 65
     Caption = 'Mode de pilotage'
     OnClick = SpeedButton5Click
   end
-  object ComboBox1: TComboBox
-    Left = 133
-    Top = 40
-    Width = 99
-    Height = 21
+  object Button1: TButton
+    Left = 91
+    Top = 416
+    Width = 276
+    Height = 65
+    Caption = 'Enregistrer un parcours '
     TabOrder = 0
-    Text = '--COM--'
-    OnChange = ComboBox1Change
-    Items.Strings = (
-      '--COM--'
-      'L"COM1"'
-      'L"COM2"'
-      'L"COM3"'
-      'L"COM4"'
-      'L"COM5"'
-      'L"COM6"'
-      'L"COM7"'
-      'L"COM8"'
-      'L"COM9"'
-      'L"COM10"'
-      'L"COM11"'
-      'L"COM12"'
-      'L"COM13"'
-      'L"COM14"'
-      'L"COM15"'
-      'L"COM16"'
-      'L"COM17"'
-      'L"COM18"'
-      'L"COM19"'
-      'L"COM20"'
-      'L"COM21"')
   end
-  object Button3: TButton
-    Left = 265
-    Top = 30
-    Width = 99
-    Height = 41
-    Caption = 'Connexion'
+  object Button2: TButton
+    Left = 91
+    Top = 512
+    Width = 276
+    Height = 65
+    Caption = 'Executer un parcours'
     TabOrder = 1
-    OnClick = Button3Click
   end
   object TimerHaut: TTimer
     Enabled = False
     Interval = 50
     OnTimer = TimerHautTimer
-    Left = 217
-    Top = 224
+    Left = 137
+    Top = 120
   end
   object TimerGauche: TTimer
     Enabled = False
     Interval = 50
     OnTimer = TimerGaucheTimer
-    Left = 57
-    Top = 368
+    Left = 49
+    Top = 200
   end
   object TimerDroite: TTimer
     Enabled = False
     Interval = 50
     OnTimer = TimerDroiteTimer
-    Left = 393
-    Top = 368
+    Left = 385
+    Top = 200
   end
   object TimerBas: TTimer
     Enabled = False
     Interval = 50
     OnTimer = TimerBasTimer
-    Left = 209
-    Top = 512
+    Left = 217
+    Top = 344
   end
 end
